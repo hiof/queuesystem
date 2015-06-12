@@ -30,8 +30,8 @@
                 "queuenumber": {}
             };
         }
-        debug('View data: ');
-        debug(data);
+        //debug('View data: ');
+        //debug(data);
 
 
         var markup = templateSource(data);
@@ -53,15 +53,15 @@
 
     postQueue = function(next) {
         var newNumber = $('#queuenumber').val();
-        debug('newNumber before next');
-        debug(newNumber);
+        //debug('newNumber before next');
+        //debug(newNumber);
         if (next) {
             newNumber = parseInt(newNumber, 10);
             ++newNumber;
             newNumber.toString();
         }
-        debug('newNumber after next');
-        debug(newNumber);
+        //debug('newNumber after next');
+        //debug(newNumber);
 
         var options = {};
 
@@ -152,7 +152,9 @@
         //(console.log(modal);
         $('#body').append(modal);
         $('.modal').modal();
-
+        window.setTimeout(function() {
+            $('#passord').focus();
+        }, 1000);
     };
     checkLogin = function() {
         // Check if the auth is valid
@@ -288,7 +290,7 @@
         options.campus = window.Hiof.options.queuesystem.campus;
         options.template = 'update';
         options.currentNumber = window.Hiof.options.queuesystem.currentNumber;
-        debug(options);
+        //debug(options);
         displayData(options);
     });
 
@@ -321,7 +323,7 @@
         }
         // Authentication
         $(document).on('click', '#login', function(e) {
-            debug('Loginform is submitted...');
+            //debug('Loginform is submitted...');
             e.preventDefault();
             checkLogin();
         });
@@ -352,18 +354,19 @@
         });
 
         $(document).on('submit', '.qs-view-update-number', function(e) {
-            debug('on.submit initiated');
+            //debug('on.submit initiated');
             e.preventDefault();
             postQueue();
         });
 
         $('#queuenumber').keypress(function(e) {
             if (e.which == 13) {
-                debug('input enter initiated');
+                //debug('input enter initiated');
                 e.preventDefault();
                 postQueue();
             }
         });
+
 
 
     });
