@@ -91,6 +91,8 @@ module.exports = function(grunt) {
         src: [
           'build/templates.js',
           'vendor/odometer/odometer.js',
+          'vendor/bootstrap/js/alert.js',
+          'vendor/bootstrap/js/transition.js',
           'app/assets/js/components/_component_queuesystem.js'
         ],
         dest: 'build/<%= pkg.name %>.v<%= pkg.version %>.min.js'
