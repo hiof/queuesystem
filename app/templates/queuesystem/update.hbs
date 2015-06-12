@@ -1,0 +1,32 @@
+
+
+
+<div class="qs-view-update">
+
+
+
+<form class="">
+  <fieldset disabled>
+  <div id="neste-nummer">
+  <span class="odometer"></span>
+  <hr>
+  <button id="btn-next" type="submit" class="btn btn-primary btn-lg btn-block">Neste</button>
+  <hr>
+  <button id="btn-show-hidden" type="submit" class="btn btn-default btn-lg btn-block">Resett kø</button>
+  </div>
+  <div class="visuallyhidden">
+  <div class="form-group">
+    <label for="queuenumber">Nummer</label>
+    <input type="text" class="form-control" id="queuenumber" placeholder="1337" value="">
+  </div>
+  <input type="hidden" id="secret">
+  <button type="submit" class="btn btn-default">Oppdater</button>
+  </div>
+  </fieldset>
+</form>
+<hr>
+{{#if authenticated}}
+  <button id="logout" class="btn btn-danger">Logg ut</button>
+{{/if}}
+</div>
+

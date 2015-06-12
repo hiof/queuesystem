@@ -1,0 +1,113 @@
+// Layout
+.universal() {
+    // Hide all other content
+    #header,
+    #cover,
+    #sidebar,
+    .feedback,
+    #main footer,
+    #breadcrumb{
+        display: none !important;
+    }
+    #footer{
+        height: 0px;
+        overflow: hidden;
+    }
+
+    #main{
+        max-width: 100%;
+        padding: 0;
+    }
+    #body{
+        overflow: hidden;
+        height: 100vh !important;
+    }
+    #content{
+        width: 100vw !important;
+        min-height: auto;
+        height: 100vh !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden;
+        //background: pink !important;
+    }
+
+    .queuesystem{
+        h1{
+            font-size: 80px;
+            //font-size: 80vw;
+        }
+        height: 100vh;
+        overflow: hidden;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    @import (inline) "../../../vendor/odometer/themes/odometer-theme-default.css";
+    html{
+        background: #457A7C;
+    }
+    .odometer{
+        font-size: 30vw;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        font-weight: 900;
+        line-height: 80vw !important;
+        //max-height: 90vh;
+    }
+    .odometer-formatting-mark{
+        display: none;
+    }
+
+
+    .qs-view-update{
+            position: relative;
+        background: #fff;
+        padding: 3rem;
+        border-radius: @border-radius-standard;
+        width: 600px;
+        margin: 0 auto;
+        margin-top: 4rem;
+        .odometer{
+            font-size: 5vw;
+            line-height: 5vw !important;
+            color: #457A7C;
+        }
+        #logout{
+            position: absolute;
+            bottom: -1.7rem;
+            left: 50%;
+            margin-left: -3.5rem;
+        }
+    }
+}
+
+.small() {}
+.medium() {}
+.large() {}
+.retina() {}
+.print() {}
+
+// IMPORT
+
+@import "../../../vendor/frontend/app/assets/less/variables/_standard.less";
+// -----------------------------------------------------------
+// -----------------------------------------------------------
+// Output
+.universal();
+//@media screen and (max-width: 640px) {
+//    .small();
+//}
+//
+//@media screen and (min-width: 641px) and (max-width: 899px) {
+//    .medium();
+//}
+//
+//@media screen and (min-width: 900px) {
+//    .large();
+//}
+//
+//@media (-webkit-min-device-pixel-ratio: 2),
+//(min-resolution: 192dppx) {
+//    .retina();
+//}

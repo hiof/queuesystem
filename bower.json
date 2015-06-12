@@ -1,0 +1,20 @@
+{
+  "name": "queuesystem",
+  "version": "1.0.0-beta.1",
+  "homepage": "https://github.com/hiof/itservices-view",
+  "authors": [
+    "Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
+  ],
+  "description": "Hiof-queuesystem package",
+  "license": "GNU",
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "jquery.scrollTo": "~1.4.11",
+    "handlebars": "~2.0.0",
+    "pathjs": "https://github.com/mtrpcic/pathjs.git",
+    "frontend": "https://github.com/hiof/frontend.git",
+    "jQuery-ajaxTransport-XDomainRequest": "https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest.git",
+    "detectjs": "https://github.com/darcyclarke/Detect.js.git",
+    "odometer": "https://github.com/HubSpot/odometer.git"
+  }
+}
