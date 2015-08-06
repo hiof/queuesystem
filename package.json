@@ -1,6 +1,6 @@
 {
   "name": "queuesystem",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.4",
   "author": "HiØ, Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>",
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "grunt-ssh": "^0.11.1",
     "grunt-static-versioning": "^0.2.1",
     "matchdep": "*",
+    "moment": "^2.10.3",
     "time-grunt": "^0.3.1"
   },
   "dependencies": {

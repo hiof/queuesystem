@@ -6,6 +6,7 @@ module.exports = function(grunt) {
   // Initiate grunt tasks
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    moment: require('moment'),
     // Tasks
     less: {
       standard: {
@@ -36,7 +37,7 @@ module.exports = function(grunt) {
     cssmin: {
       main: {
         options: {
-          banner: '/*! <%= pkg.name %> v<%= pkg.version %> by <%= pkg.author %> */'
+          banner: '/*! <%= pkg.name %> v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("hh:mm DD-MM-YYYY") %> */'
         },
         expand: true,
         cwd: 'build',
@@ -46,6 +47,13 @@ module.exports = function(grunt) {
       }
     },
     copy: {
+      images: {
+        expand: true,
+        cwd: 'app/assets/images/',
+        src: '**',
+        dest: 'build/images/',
+        filter: 'isFile'
+      },
       jstemplates: {
         expand: true,
         cwd: 'vendor/frontend/app/templates/',
@@ -59,7 +67,7 @@ module.exports = function(grunt) {
         src: '**',
         dest: 'dist',
         filter: 'isFile'
-      }
+      },
     },
     clean: {
       dist: ['dist/**/*'],
@@ -91,6 +99,9 @@ module.exports = function(grunt) {
         src: [
           'build/templates.js',
           'vendor/odometer/odometer.js',
+          'vendor/bootstrap/js/alert.js',
+          'vendor/bootstrap/js/transition.js',
+          'vendor/bootstrap/js/modal.js',
           'app/assets/js/components/_component_queuesystem.js'
         ],
         dest: 'build/<%= pkg.name %>.v<%= pkg.version %>.min.js'
@@ -101,7 +112,7 @@ module.exports = function(grunt) {
         mangle: false,
         //compress: true,
         preserveComments: false,
-        banner: '/*! <%= pkg.name %> v<%= pkg.version %> by <%= pkg.author %> */'
+        banner: '/*! <%= pkg.name %> v<%= pkg.version %> by <%= pkg.author %>, released: <%= moment().format("hh:mm DD-MM-YYYY") %> */'
       },
       main: {
         files: {
@@ -221,7 +232,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('subtaskJs', ['handlebars','jshint', 'concat:scripts', 'uglify', 'copy:jstemplates']);
+  grunt.registerTask('subtaskJs', ['handlebars','jshint', 'concat:scripts', 'uglify', 'copy:jstemplates', 'copy:images']);
   grunt.registerTask('subtaskCss', ['less', 'autoprefixer', 'cssmin']);
 
   grunt.registerTask('build', ['clean:build', 'clean:dist', 'subtaskJs', 'subtaskCss', 'versioning:build']);
@@ -229,7 +240,7 @@ module.exports = function(grunt) {
 
 
 
-  grunt.registerTask('deploy-staging', ['deploy', 'sftp:stage']);
-  grunt.registerTask('deploy-www', ['deploy', 'sftp:prod']);
+  grunt.registerTask('deploy-stage', ['deploy', 'sftp:stage']);
+  grunt.registerTask('deploy-prod', ['deploy', 'sftp:prod']);
 
 };

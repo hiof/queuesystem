@@ -1,28 +1,26 @@
 // Layout
 .universal() {
     // Hide all other content
-    #header,
-    #cover,
-    #sidebar,
-    .feedback,
-    #main footer,
-    #breadcrumb{
+    #header, #cover, #sidebar, .feedback, #main footer, #breadcrumb, .cookie-disclaimer {
         display: none !important;
     }
-    #footer{
+    html {
+        font-size: 62.5%;
+        /* Now 10px = 1rem! */
+    }
+    #footer {
         height: 0px;
         overflow: hidden;
     }
-
-    #main{
+    #main {
         max-width: 100%;
         padding: 0;
     }
-    #body{
+    #body {
         overflow: hidden;
         height: 100vh !important;
     }
-    #content{
+    #content {
         width: 100vw !important;
         min-height: auto;
         height: 100vh !important;
@@ -31,66 +29,95 @@
         overflow: hidden;
         //background: pink !important;
     }
-
-    .queuesystem{
-        h1{
+    .queuesystem {
+        h1 {
             font-size: 80px;
             //font-size: 80vw;
         }
-        height: 100vh;
+        height: 90vh;
         overflow: hidden;
         padding: 0 !important;
         margin: 0 !important;
     }
     @import (inline) "../../../vendor/odometer/themes/odometer-theme-default.css";
-    html{
+    html {
         background: #457A7C;
     }
-    .odometer{
+    .odometer {
         font-size: 30vw;
         color: #fff;
         text-align: center;
         width: 100%;
         font-weight: 900;
-        line-height: 80vw !important;
+        line-height: 90vh !important;
         //max-height: 90vh;
     }
-    .odometer-formatting-mark{
+    .odometer-formatting-mark {
         display: none;
     }
-
-
-    .qs-view-update{
-            position: relative;
+    .qs-view-update {
+        position: relative;
         background: #fff;
         padding: 3rem;
         border-radius: @border-radius-standard;
         width: 600px;
         margin: 0 auto;
         margin-top: 4rem;
-        .odometer{
+        .odometer {
             font-size: 5vw;
             line-height: 5vw !important;
             color: #457A7C;
         }
-        #logout{
+        #logout {
             position: absolute;
             bottom: -1.7rem;
             left: 50%;
             margin-left: -3.5rem;
         }
     }
+    .fade {
+        opacity: 0;
+        -webkit-transition: opacity 0.15s linear;
+        -moz-transition: opacity 0.15s linear;
+        -o-transition: opacity 0.15s linear;
+        transition: opacity 0.15s linear;
+    }
+    .fade.in {
+        opacity: 1;
+    }
+    .fredrikstad-qr,
+    .halden-qr {
+        display: none;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        width: 20rem;
+        height: 20rem;
+    }
+    .queuesystem-title{
+        text-align: center;
+        width: 100%;
+        font-size: 10rem;
+        color: #fff;
+        padding-top: 6rem;
+    }
 }
 
 .small() {}
+
 .medium() {}
+
 .large() {}
+
 .retina() {}
+
 .print() {}
 
 // IMPORT
-
 @import "../../../vendor/frontend/app/assets/less/variables/_standard.less";
+@import "../../../vendor/bootstrap/less/variables.less";
+@import "../../../vendor/bootstrap/less/mixins.less";
+@import "../../../vendor/bootstrap/less/close.less";
 // -----------------------------------------------------------
 // -----------------------------------------------------------
 // Output
