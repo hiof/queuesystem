@@ -46,9 +46,11 @@
             authenticate();
 
         }
+        $('.' + window.Hiof.options.queuesystem.campus + '-qr').toggle();
         window.setInterval(function() {
             getCurrentQueueNumber();
         }, 1000);
+
     };
 
     postQueue = function(next) {

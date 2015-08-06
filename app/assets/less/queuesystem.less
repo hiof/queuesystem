@@ -1,8 +1,12 @@
 // Layout
 .universal() {
     // Hide all other content
-    #header, #cover, #sidebar, .feedback, #main footer, #breadcrumb {
+    #header, #cover, #sidebar, .feedback, #main footer, #breadcrumb, .cookie-disclaimer {
         display: none !important;
+    }
+    html {
+        font-size: 62.5%;
+        /* Now 10px = 1rem! */
     }
     #footer {
         height: 0px;
@@ -30,7 +34,7 @@
             font-size: 80px;
             //font-size: 80vw;
         }
-        height: 100vh;
+        height: 90vh;
         overflow: hidden;
         padding: 0 !important;
         margin: 0 !important;
@@ -45,7 +49,7 @@
         text-align: center;
         width: 100%;
         font-weight: 900;
-        line-height: 80vw !important;
+        line-height: 90vh !important;
         //max-height: 90vh;
     }
     .odometer-formatting-mark {
@@ -80,6 +84,22 @@
     }
     .fade.in {
         opacity: 1;
+    }
+    .fredrikstad-qr,
+    .halden-qr {
+        display: none;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        width: 20rem;
+        height: 20rem;
+    }
+    .queuesystem-title{
+        text-align: center;
+        width: 100%;
+        font-size: 10rem;
+        color: #fff;
+        padding-top: 6rem;
     }
 }
 
