@@ -24,7 +24,7 @@ $ npm install
 $ bower install
 ```
 
-You then have to build the odomoter plugin(required Ruby and rubygems):
+You then have to build the odomoter plugin(require Ruby and rubygems):
 
 ```
 $ cd vendor/odometer
